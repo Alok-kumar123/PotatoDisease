@@ -1,7 +1,6 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-from starlette.middleware.base import BaseHTTPMiddleware
 from PIL import Image
 import numpy as np
 import io
@@ -18,14 +17,14 @@ origins = [
 ]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 #Load Model
-model=keras.models.load_model('C:\\Users\\alok\\OneDrive\\Desktop\\MLproject\\model.h5')
+model=keras.models.load_model('/model.h5')
 
 #Endpoint for image classification
 
