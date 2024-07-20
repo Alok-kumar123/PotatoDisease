@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow: auto;
+}
+
+ 
+body {
+  background-image: url('C:\\Users\\alok\\OneDrive\\Desktop\\MLproject\\image-classifier\\src\\farm.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about-container {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.about-container h2,
+.about-container h3,
+.about-container p,
+.about-container ul {
+  margin: 10px 0;
+}
+
+.about-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.about-container li {
+  margin-bottom: 10px;
+}
+
