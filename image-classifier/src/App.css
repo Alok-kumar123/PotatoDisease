@@ -13,7 +13,7 @@ body, html {
 
  
 body {
-  background-image: url('C:\\Users\\alok\\OneDrive\\Desktop\\MLproject\\image-classifier\\src\\farm.jpg');
+  background-image: url('/farm.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
