@@ -17,7 +17,7 @@ origins = [
 ]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins="https://potato-disease-client-6idkob1dl-alok-kumars-projects-8add5b2c.vercel.app/",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
