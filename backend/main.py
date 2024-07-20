@@ -13,18 +13,18 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:3000",
-    "https://potato-disease-client-6idkob1dl-alok-kumars-projects-8add5b2c.vercel.app/",
+    "https://potato-disease-client-6idkob1dl-alok-kumars-projects-8add5b2c.vercel.app",
 ]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins="https://potato-disease-client.vercel.app/",
+    allow_origins="https://potato-disease-client.vercel.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 #Load Model
-model=keras.models.load_model('C:\\Users\\alok\\OneDrive\\Desktop\\MLproject\\backend\\model.h5')
+model=keras.models.load_model('model.h5')
 
 #Endpoint for image classification
 
