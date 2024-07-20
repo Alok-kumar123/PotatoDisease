@@ -4,7 +4,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
 import numpy as np
 import io
-import tensorflow as tf
 import keras
 
  
@@ -24,7 +23,7 @@ app.add_middleware(
 )
 
 #Load Model
-model=keras.models.load_model('/model.h5')
+model=keras.models.load_model('C:\\Users\\alok\\OneDrive\\Desktop\\MLproject\\backend\\model.h5')
 
 #Endpoint for image classification
 
@@ -33,10 +32,11 @@ async def classify_image(file: UploadFile=File(...)):
     try:
         contents=await file.read()
         image=Image.open(io.BytesIO(contents))
-        img=tf.expand_dims(image,axis=0)
+        img=np.array(image)
+        img=np.expand_dims(img,axis=0)
         predictions=model.predict(img)
-        pred_class=tf.argmax(predictions[0])
-        conf=round(max(predictions[0])*100,2)
+        pred_class=np.argmax(predictions[0])
+        conf=round(np.max(predictions[0])*100,2)
         class_names=["Early Blight","Late Blight","Healthy"]
         return JSONResponse(content={"Pred_class":class_names[int(pred_class)], "Confidence":float(conf)})
     except Exception as e:
