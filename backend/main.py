@@ -47,3 +47,7 @@ async def classify_image(file: UploadFile = File(...)):
         return JSONResponse(content={"Pred_class": class_names[int(pred_class)], "Confidence": float(conf)})
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
