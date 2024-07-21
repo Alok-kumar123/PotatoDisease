@@ -23,8 +23,8 @@ app.add_middleware(
 )
 
 # Define custom loss
-def custom_sparse_categorical_crossentropy(from_logits=False, reduction='auto', name=None, **kwargs):
-    return SparseCategoricalCrossentropy(from_logits=from_logits, reduction=reduction, name=name, **kwargs)
+def custom_sparse_categorical_crossentropy(from_logits=False, reduction='auto', name=None):
+    return SparseCategoricalCrossentropy(from_logits=from_logits, reduction=reduction, name=name)
 
 # Load Model
 model = keras.models.load_model(
