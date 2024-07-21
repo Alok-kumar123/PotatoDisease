@@ -38,7 +38,7 @@ The backend is built using FastAPI. It handles the image upload, processes the i
 ### Installation
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/potato-disease-classification.git
+    git clone https://github.com/Alok-kumar/PotatoDisease.git
     cd potato-disease-classification
     ```
 
