@@ -14,6 +14,7 @@ origins = [
     "http://localhost:3000",
     "https://potato-disease-client.vercel.app",
 ]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -22,17 +23,18 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Define custom loss
-def custom_sparse_categorical_crossentropy(from_logits=False, reduction='auto', name=None):
+# Define custom loss function
+def custom_sparse_categorical_crossentropy(from_logits=False, reduction='auto', name=None, **kwargs):
+    # Remove unsupported arguments from kwargs
+    kwargs.pop('ignore_class', None)
     return SparseCategoricalCrossentropy(from_logits=from_logits, reduction=reduction, name=name)
 
-# Load Model
+# Load the model
 model = keras.models.load_model(
     'model.h5',
-    custom_objects={"SparseCategoricalCrossentropy": custom_sparse_categorical_crossentropy}
+    custom_objects={"custom_sparse_categorical_crossentropy": custom_sparse_categorical_crossentropy}
 )
 
-# Endpoint for image classification
 @app.post("/classify/")
 async def classify_image(file: UploadFile = File(...)):
     try:
