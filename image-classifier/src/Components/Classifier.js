@@ -26,7 +26,7 @@ const ImageUploadCard = () => {
         try {
             let res = await axios({
                 method: "post",
-                url: "https://potato-disease-phi.vercel.app/classify/",
+                url: "https://potatodisease.onrender.com/classify/",
                 data: formData,
               });
             console.log(res.data.Pred_class,res.data.Confidence);
