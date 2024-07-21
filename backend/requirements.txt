@@ -2,5 +2,5 @@ fastapi
 uvicorn
 Pillow
 numpy
-keras
-tensorflow
+keras==2.15.0
+tensorflow==2.15.0
