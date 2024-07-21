@@ -87,8 +87,8 @@ const ImageUploadCard = () => {
                 </div>
                 {stage?
                     ( <div className="text-center">
-                <h2 className="mb-4" style={{color:'Red'}}>Plant Disease Status : {stage}</h2>
-                <h2 className="mb-4" style={{color:'Red'}}>Prediction Confidence : {conf} %</h2>
+                <h2 className="mb-4" style={{color:'White'}}>Plant Disease Status : {stage}</h2>
+                <h2 className="mb-4" style={{color:'White'}}>Prediction Confidence : {conf} %</h2>
                 </div>):
                 ( <></>)
                     }
